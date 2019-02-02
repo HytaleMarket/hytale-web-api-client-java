@@ -113,7 +113,7 @@ Don't worry, we already take care of our dependencies so that you definitely don
 ---
 
 ### License
-This project is licensed under the Apache License, Version 2.0. See the [LICENSE.md](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/LICENSE.txt) file for details.
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE.txt](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/LICENSE.txt) file for details.
 
 ---
 
