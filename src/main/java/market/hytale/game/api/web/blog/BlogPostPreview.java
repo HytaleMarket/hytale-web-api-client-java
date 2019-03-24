@@ -29,7 +29,14 @@ public class BlogPostPreview extends AbstractBlogPost {
     
     private final String bodyExcerpt;
     
-    public BlogPostPreview(boolean featured, List<String> tags, String id, String author, String title, Date publishedAt, CoverImage coverImage, Date createdAt, String slug, String bodyExcerpt) {
+    public BlogPostPreview(boolean featured, List<String> tags, String id,
+                           String author,
+                           String title,
+                           Date publishedAt,
+                           CoverImage coverImage,
+                           Date createdAt,
+                           String slug,
+                           String bodyExcerpt) {
         super(featured, tags, id, author, title, publishedAt, coverImage, createdAt, slug);
         
         this.bodyExcerpt = bodyExcerpt;
