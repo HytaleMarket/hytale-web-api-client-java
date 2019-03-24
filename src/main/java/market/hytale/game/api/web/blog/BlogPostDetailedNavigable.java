@@ -30,7 +30,18 @@ public class BlogPostDetailedNavigable extends BlogPostDetailed {
     private final BlogPostDetailed next;
     private final BlogPostDetailed previous;
     
-    public BlogPostDetailedNavigable(boolean featured, List<String> tags, String id, String author, String title, Date publishedAt, CoverImage coverImage, Date createdAt, String slug, String body, List<String> publishedTo, int version, BlogPostDetailed next, BlogPostDetailed previous) {
+    public BlogPostDetailedNavigable(boolean featured, List<String> tags, String id,
+                                     String author,
+                                     String title,
+                                     Date publishedAt,
+                                     CoverImage coverImage,
+                                     Date createdAt,
+                                     String slug,
+                                     String body,
+                                     List<String> publishedTo,
+                                     int version,
+                                     BlogPostDetailed next,
+                                     BlogPostDetailed previous) {
         super(featured, tags, id, author, title, publishedAt, coverImage, createdAt, slug, body, publishedTo, version);
         
         this.next = next;
