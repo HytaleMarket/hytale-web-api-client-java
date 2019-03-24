@@ -33,7 +33,16 @@ public class BlogPostDetailed extends BlogPost {
     @Json(name = "__v")
     private final int version;
     
-    public BlogPostDetailed(boolean featured, List<String> tags, String id, String author, String title, Date publishedAt, CoverImage coverImage, Date createdAt, String slug, String body, List<String> publishedTo, int version) {
+    public BlogPostDetailed(boolean featured, List<String> tags, String id,
+                            String author,
+                            String title,
+                            Date publishedAt,
+                            CoverImage coverImage,
+                            Date createdAt,
+                            String slug,
+                            String body,
+                            List<String> publishedTo,
+                            int version) {
         super(featured, tags, id, author, title, publishedAt, coverImage, createdAt, slug, body);
         
         this.publishedTo = publishedTo;

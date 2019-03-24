@@ -3,12 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>market.hytale</groupId>
     <artifactId>hytale-web-api-client-java</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
+
     <name>Hytale Web API Client (Java)</name>
     <description>Java-based client implementation of the Hytale Web API</description>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -16,10 +19,12 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <organization>
         <name>Hytale Market</name>
         <url>https://hytale.market</url>
     </organization>
+
     <developers>
         <developer>
             <id>krymonota</id>
@@ -39,6 +44,14 @@
             </properties>
         </developer>
     </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit-jupiter.version>5.4.0-M1</junit-jupiter.version>
+    </properties>
+
     <build>
         <finalName>${project.artifactId}-${project.version}-UNSHADED</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
@@ -87,12 +100,14 @@
             </plugin>
         </plugins>
     </build>
+
     <repositories>
         <repository>
             <id>maven-central</id>
             <url>http://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -131,10 +146,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <junit-jupiter.version>5.4.0-M1</junit-jupiter.version>
-    </properties>
 </project>

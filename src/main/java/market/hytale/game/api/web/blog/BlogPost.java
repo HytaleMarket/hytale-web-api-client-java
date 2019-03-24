@@ -29,7 +29,14 @@ public class BlogPost extends AbstractBlogPost {
     
     private final String body;
     
-    public BlogPost(boolean featured, List<String> tags, String id, String author, String title, Date publishedAt, CoverImage coverImage, Date createdAt, String slug, String body) {
+    public BlogPost(boolean featured, List<String> tags, String id,
+                    String author,
+                    String title,
+                    Date publishedAt,
+                    CoverImage coverImage,
+                    Date createdAt,
+                    String slug,
+                    String body) {
         super(featured, tags, id, author, title, publishedAt, coverImage, createdAt, slug);
         
         this.body = body;
