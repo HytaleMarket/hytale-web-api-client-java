@@ -65,7 +65,7 @@ libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "1.
 ---
 
 ### Usage
-Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiManager.java#L31) method:
+Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiManager.java#L36) method:
 ```java
 HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 ```
