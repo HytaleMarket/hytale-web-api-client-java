@@ -80,7 +80,7 @@ List<BlogPostPreview> featuredPosts = apiService.getPublishedBlogPosts().execute
 
 Make an asynchronous request (recommended for most applications):
 ```java
-HytaleWebApiService apiService = HytaleWebApiManager.createAPIProvider();  
+HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 apiService.getPublishedBlogPosts().enqueue(new Callback<List<BlogPostPreview>>() {
 
     @Override
