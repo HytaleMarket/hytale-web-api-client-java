@@ -29,9 +29,9 @@ Add the dependency:
 ```xml
 <dependencies>
     <dependency>
-        <groupId>market.hytale</groupId>
+        <groupId>market.hytale.rest</groupId>
         <artifactId>hytale-web-api-client-java</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </dependency>
 </dependencies>
 ```
@@ -48,7 +48,7 @@ allprojects {
 Add the dependency:
 ```gradle
 dependencies {
-    implementation 'market.hytale:hytale-web-api-client-java:1.0.0'
+    implementation 'market.hytale.rest:hytale-web-api-client-java:1.1.0'
 }
 ```
 
@@ -59,28 +59,28 @@ resolvers += "jitpack" at "https://jitpack.io"
 ```
 Add the dependency:
 ```scala
-libraryDependencies += "market.hytale" % "hytale-web-api-client-java" % "1.0.0" 
+libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "1.1.0" 
 ```
 
 ---
 
 ### Usage
-Create an instance of [`HytaleWebAPIService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebAPIService.java) by calling the static [`HytaleWebAPIManager.createAPIProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebAPIManager.java#L31) method:
+Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiManager.java#L31) method:
 ```java
-HytaleWebAPIService apiService = HytaleWebAPIManager.createAPIProvider();  
+HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 ```
-If you want to use a custom instance of `OkHttpClient` you're welcome to have a look at our code.
+If you want to use a custom instance of `OkHttpClient`, pass an instance of it to the `createApiProvider` method.
 &nbsp;
 
 Make a synchronous request (be aware that this blocks the current Thread!):
 ```java
-HytaleWebAPIService apiService = HytaleWebAPIManager.createAPIProvider();  
+HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 List<BlogPostPreview> featuredPosts = apiService.getPublishedBlogPosts().execute().body();
 ```
 
 Make an asynchronous request (recommended for most applications):
 ```java
-HytaleWebAPIService apiService = HytaleWebAPIManager.createAPIProvider();  
+HytaleWebApiService apiService = HytaleWebApiManager.createAPIProvider();  
 apiService.getPublishedBlogPosts().enqueue(new Callback<List<BlogPostPreview>>() {
 
     @Override
