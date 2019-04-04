@@ -117,15 +117,15 @@
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
                     <executions>
-                         <execution>
-                             <id>validate</id>
-                             <phase>validate</phase>
-                             <goals>
-                                 <goal>check</goal>
+                        <execution>
+                            <id>validate</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>check</goal>
                             </goals>
-                         </execution>
-                     </executions>
-                 </plugin>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
