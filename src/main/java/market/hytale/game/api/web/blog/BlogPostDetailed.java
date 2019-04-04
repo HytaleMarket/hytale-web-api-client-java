@@ -15,12 +15,11 @@
 package market.hytale.game.api.web.blog;
 
 import com.squareup.moshi.Json;
+import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-
-import java.util.List;
 
 @SuperBuilder
 @Getter

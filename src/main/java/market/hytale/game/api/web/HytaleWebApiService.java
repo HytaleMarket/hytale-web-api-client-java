@@ -14,6 +14,7 @@
 
 package market.hytale.game.api.web;
 
+import java.util.List;
 import market.hytale.game.api.web.blog.BlogPost;
 import market.hytale.game.api.web.blog.BlogPostDetailedNavigable;
 import market.hytale.game.api.web.blog.BlogPostPreview;
@@ -21,8 +22,6 @@ import market.hytale.game.api.web.job.Job;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-
-import java.util.List;
 
 public interface HytaleWebApiService {
 

@@ -16,11 +16,10 @@ package market.hytale.game.api.web;
 
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter;
+import java.util.Date;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
-
-import java.util.Date;
 
 public final class HytaleWebApiManager {
 
