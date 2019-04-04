@@ -60,7 +60,7 @@
     <build>
         <finalName>${project.artifactId}-${project.version}-UNSHADED</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
-        <defaultGoal>clean install</defaultGoal>
+        <defaultGoal>checkstyle:check clean install</defaultGoal>
         <resources>
             <resource>
                 <targetPath>.</targetPath>
