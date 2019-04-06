@@ -25,26 +25,6 @@
         <url>https://hytale.market</url>
     </organization>
 
-    <developers>
-        <developer>
-            <id>krymonota</id>
-            <name>Krymonota</name>
-            <email>manager@hytale.market</email>
-            <url>https://hytale.market/user/1-krymonota/</url>
-            <organization>Hytale Market</organization>
-            <organizationUrl>https://hytale.market</organizationUrl>
-            <roles>
-                <role>manager</role>
-                <role>developer</role>
-            </roles>
-            <timezone>Europe/Berlin</timezone>
-            <properties>
-                <twitter>https://twitter.com/Krymonota</twitter>
-                <github>https://github.com/Krymonota</github>
-            </properties>
-        </developer>
-    </developers>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
