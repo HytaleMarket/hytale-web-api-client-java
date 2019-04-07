@@ -20,25 +20,35 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a job location.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString
 @EqualsAndHashCode
 public class JobLocation {
 
-  @Json(name = "@type")
-  private String type;
-
-  @SuperBuilder
-  @Getter
-  @ToString
-  @EqualsAndHashCode
-  public static class Address {
-
     @Json(name = "@type")
     private String type;
-    private String addressCountry;
 
-  }
+    /**
+     * Represents an address for a {@link JobLocation}.
+     * @since 1.0.0
+     * @version 2019.04.01-RELEASE
+     */
+    @SuperBuilder
+    @Getter
+    @ToString
+    @EqualsAndHashCode
+    public static class Address {
+
+        @Json(name = "@type")
+        private String type;
+        private String addressCountry;
+
+    }
 
 }

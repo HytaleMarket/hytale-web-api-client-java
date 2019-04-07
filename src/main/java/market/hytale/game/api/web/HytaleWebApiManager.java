@@ -14,46 +14,51 @@
 
 package market.hytale.game.api.web;
 
+import java.util.Date;
+
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter;
-import java.util.Date;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
 
+/**
+ * Main class used for creating an api provider instance of {@link HytaleWebApiService}.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 public final class HytaleWebApiManager {
 
-  private HytaleWebApiManager() {}
+    private HytaleWebApiManager() { }
 
-  public static final String API_BASE_URL = "https://hytale.com/api/";
+    public static final String API_BASE_URL = "https://hytale.com/api/";
 
-  /**
-   * Creates an instance of {@link HytaleWebApiManager}.
-   * 
-   * @return The created instance of {@link HytaleWebApiManager}
-   */
-  public static HytaleWebApiService createApiProvider() {
-    OkHttpClient httpClient = new OkHttpClient.Builder().build();
-    
-    return HytaleWebApiManager.createApiProvider(httpClient);
-  }
+    /**
+     * Creates an instance of {@link HytaleWebApiManager}.
+     * @return The created instance of {@link HytaleWebApiManager}
+     */
+    public static HytaleWebApiService createApiProvider() {
+        OkHttpClient httpClient = new OkHttpClient.Builder().build();
 
-  /**
-   * Creates an instance of {@link HytaleWebApiManager} with a custom {@link OkHttpClient}.
-   * 
-   * @param  httpClient An instance of {@link OkHttpClient}
-   * @return The created instance of {@link HytaleWebApiManager}
-   */
-  public static HytaleWebApiService createApiProvider(OkHttpClient httpClient) {
-    Moshi moshi =
-        new Moshi.Builder().add(Date.class, new Rfc3339DateJsonAdapter().nullSafe()).build();
+        return HytaleWebApiManager.createApiProvider(httpClient);
+    }
 
-    MoshiConverterFactory moshiConverterFactory = MoshiConverterFactory.create(moshi);
+    /**
+     * Creates an instance of {@link HytaleWebApiManager} with a custom {@link OkHttpClient}.
+     * @param  httpClient An instance of {@link OkHttpClient}
+     * @return The created instance of {@link HytaleWebApiManager}
+     */
+    public static HytaleWebApiService createApiProvider(final OkHttpClient httpClient) {
+        Moshi moshi =
+                new Moshi.Builder().add(Date.class, new Rfc3339DateJsonAdapter().nullSafe()).build();
 
-    Retrofit retrofit = new Retrofit.Builder().client(httpClient).baseUrl(API_BASE_URL)
-        .addConverterFactory(moshiConverterFactory).build();
+        MoshiConverterFactory moshiConverterFactory = MoshiConverterFactory.create(moshi);
 
-    return retrofit.create(HytaleWebApiService.class);
-  }
+        Retrofit retrofit = new Retrofit.Builder().client(httpClient).baseUrl(API_BASE_URL)
+               .addConverterFactory(moshiConverterFactory).build();
+
+        return retrofit.create(HytaleWebApiService.class);
+    }
 
 }

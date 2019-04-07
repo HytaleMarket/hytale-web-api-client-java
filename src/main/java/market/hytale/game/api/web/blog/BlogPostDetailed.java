@@ -14,21 +14,29 @@
 
 package market.hytale.game.api.web.blog;
 
-import com.squareup.moshi.Json;
 import java.util.List;
+
+import com.squareup.moshi.Json;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a detailed blog post extending {@link BlogPost}.
+ * This is usually the next or previous blog post of {@link BlogPostDetailedNavigable}.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class BlogPostDetailed extends BlogPost {
 
-  private List<String> publishedTo;
-  @Json(name = "__v")
-  private int version;
+    private List<String> publishedTo;
+    @Json(name = "__v")
+    private int version;
 
 }

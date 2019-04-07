@@ -6,7 +6,7 @@
 
     <groupId>market.hytale.rest</groupId>
     <artifactId>hytale-web-api-client-java</artifactId>
-    <version>1.1.0</version>
+    <version>2019.04.01-RELEASE</version>
     <packaging>jar</packaging>
 
     <name>Hytale Web API Client (Java)</name>
@@ -29,11 +29,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <checkstyle.config.location>config/checkstyle/google_checks.xml</checkstyle.config.location>
+
+        <checkstyle.config.location>config/checkstyle/hytale_market_checks.xml</checkstyle.config.location>
+        <checkstyle.header.file>config/checkstyle/license_header.txt</checkstyle.header.file>
         <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
         <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
         <checkstyle.includeTestSourceDirectory>true</checkstyle.includeTestSourceDirectory>
         <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+
         <junit-jupiter.version>5.5.0-M1</junit-jupiter.version>
     </properties>
 
@@ -143,6 +146,7 @@
     </repositories>
 
     <dependencies>
+        <!-- ACTUAL DEPENDENCIES -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -167,6 +171,7 @@
             <version>1.8.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- UNIT TESTING -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

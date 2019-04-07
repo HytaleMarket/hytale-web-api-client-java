@@ -19,12 +19,18 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a blog post extending {@link AbstractBlogPost} with content.
+ * This is usually a published and featured blog post.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class BlogPost extends AbstractBlogPost {
 
-  private String body;
+    private String body;
 
 }

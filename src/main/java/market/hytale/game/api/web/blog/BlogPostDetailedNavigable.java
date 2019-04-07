@@ -19,13 +19,19 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a detailed blog post extending {@link BlogPostDetailed} with navigation.
+ * This is usually a directly selected blog post.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class BlogPostDetailedNavigable extends BlogPostDetailed {
 
-  private BlogPostDetailed next;
-  private BlogPostDetailed previous;
+    private BlogPostDetailed next;
+    private BlogPostDetailed previous;
 
 }

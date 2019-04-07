@@ -19,12 +19,18 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a blog post preview extending {@link AbstractBlogPost} with a content excerpt.
+ * This is usually a blog post from a list (e. g. archive or published ones).
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class BlogPostPreview extends AbstractBlogPost {
 
-  private String bodyExcerpt;
+    private String bodyExcerpt;
 
 }

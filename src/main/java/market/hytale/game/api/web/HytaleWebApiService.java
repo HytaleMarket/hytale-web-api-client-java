@@ -15,6 +15,7 @@
 package market.hytale.game.api.web;
 
 import java.util.List;
+
 import market.hytale.game.api.web.blog.BlogPost;
 import market.hytale.game.api.web.blog.BlogPostDetailedNavigable;
 import market.hytale.game.api.web.blog.BlogPostPreview;
@@ -23,22 +24,27 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
+/**
+ * Interface containing all callable api routes.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 public interface HytaleWebApiService {
 
-  @GET("job/listing")
-  Call<List<Job>> getJobListing();
+    @GET("job/listing")
+    Call<List<Job>> getJobListing();
 
-  @GET("blog/post/published")
-  Call<List<BlogPostPreview>> getPublishedBlogPosts();
+    @GET("blog/post/published")
+    Call<List<BlogPostPreview>> getPublishedBlogPosts();
 
-  @GET("blog/post/published?featuredOnly=1")
-  Call<List<BlogPost>> getPublishedFeaturedBlogPosts();
+    @GET("blog/post/published?featuredOnly=1")
+    Call<List<BlogPost>> getPublishedFeaturedBlogPosts();
 
-  @GET("blog/post/archive/{year}/{month}")
-  Call<List<BlogPostPreview>> getArchivedBlogPosts(@Path("year") int year,
-      @Path("month") int month);
+    @GET("blog/post/archive/{year}/{month}")
+    Call<List<BlogPostPreview>> getArchivedBlogPosts(@Path("year") int year,
+            @Path("month") int month);
 
-  @GET("blog/post/slug/{slug}")
-  Call<BlogPostDetailedNavigable> getBlogPost(@Path("slug") String slug);
+    @GET("blog/post/slug/{slug}")
+    Call<BlogPostDetailedNavigable> getBlogPost(@Path("slug") String slug);
 
 }

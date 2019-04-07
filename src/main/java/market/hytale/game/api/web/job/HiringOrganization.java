@@ -20,28 +20,38 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a hiring organization (normally Hypixel Studios).
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString
 @EqualsAndHashCode
 public class HiringOrganization {
 
-  @Json(name = "@type")
-  private String type;
-  private String name;
-  private Department department;
-  private String logo;
-
-  @SuperBuilder
-  @Getter
-  @ToString
-  @EqualsAndHashCode
-  public static class Department {
-
     @Json(name = "@type")
     private String type;
     private String name;
+    private Department department;
+    private String logo;
 
-  }
+    /**
+     * Represents a department of a {@link HiringOrganization}.
+     * @since 1.0.0
+     * @version 2019.04.01-RELEASE
+     */
+    @SuperBuilder
+    @Getter
+    @ToString
+    @EqualsAndHashCode
+    public static class Department {
+
+        @Json(name = "@type")
+        private String type;
+        private String name;
+
+    }
 
 }

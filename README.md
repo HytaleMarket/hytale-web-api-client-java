@@ -31,7 +31,7 @@ Add the dependency:
     <dependency>
         <groupId>market.hytale.rest</groupId>
         <artifactId>hytale-web-api-client-java</artifactId>
-        <version>1.1.0</version>
+        <version>2019.04.01-RELEASE</version>
     </dependency>
 </dependencies>
 ```
@@ -48,7 +48,7 @@ allprojects {
 Add the dependency:
 ```gradle
 dependencies {
-    implementation 'market.hytale.rest:hytale-web-api-client-java:1.1.0'
+    implementation 'market.hytale.rest:hytale-web-api-client-java:2019.04.01-RELEASE'
 }
 ```
 
@@ -59,13 +59,13 @@ resolvers += "jitpack" at "https://jitpack.io"
 ```
 Add the dependency:
 ```scala
-libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "1.1.0" 
+libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "2019.04.01-RELEASE" 
 ```
 
 ---
 
 ### Usage
-Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiManager.java#L36) method:
+Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiManager.java#L41) method:
 ```java
 HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 ```

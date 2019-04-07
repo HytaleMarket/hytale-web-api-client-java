@@ -11,8 +11,3 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-/**
- * Provides all job entities that may be returned from the Hytale Web API.
- */
-package market.hytale.game.api.web.job;

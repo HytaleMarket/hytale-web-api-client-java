@@ -14,30 +14,37 @@
 
 package market.hytale.game.api.web.blog;
 
-import com.squareup.moshi.Json;
 import java.util.Date;
 import java.util.List;
+
+import com.squareup.moshi.Json;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents a cover image for a {@link AbstractBlogPost}.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString
 @EqualsAndHashCode
 public class CoverImage {
 
-  private List<String> variants;
-  @Json(name = "_id")
-  private String id;
-  private String s3Key;
-  private String mimeType;
-  private boolean attached;
-  private String contentType;
-  private String contentId;
-  private Date createdAt;
-  @Json(name = "__v")
-  private int version;
+    private List<String> variants;
+    @Json(name = "_id")
+    private String id;
+    private String s3Key;
+    private String mimeType;
+    private boolean attached;
+    private String contentType;
+    private String contentId;
+    private Date createdAt;
+    @Json(name = "__v")
+    private int version;
 
 }

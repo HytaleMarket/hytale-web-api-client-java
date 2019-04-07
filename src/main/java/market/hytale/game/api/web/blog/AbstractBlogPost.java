@@ -14,29 +14,36 @@
 
 package market.hytale.game.api.web.blog;
 
-import com.squareup.moshi.Json;
 import java.util.Date;
 import java.util.List;
+
+import com.squareup.moshi.Json;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * Represents the base model of every blog post.
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
+ */
 @SuperBuilder
 @Getter
 @ToString
 @EqualsAndHashCode
 public abstract class AbstractBlogPost {
 
-  private boolean featured;
-  private List<String> tags;
-  @Json(name = "_id")
-  private String id;
-  private String author;
-  private String title;
-  private Date publishedAt;
-  private CoverImage coverImage;
-  private Date createdAt;
-  private String slug;
+    private boolean featured;
+    private List<String> tags;
+    @Json(name = "_id")
+    private String id;
+    private String author;
+    private String title;
+    private Date publishedAt;
+    private CoverImage coverImage;
+    private Date createdAt;
+    private String slug;
 
 }
