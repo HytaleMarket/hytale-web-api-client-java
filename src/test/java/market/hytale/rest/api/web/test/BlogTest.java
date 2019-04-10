@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package market.hytale.game.api.web.test;
+package market.hytale.rest.api.web.test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
