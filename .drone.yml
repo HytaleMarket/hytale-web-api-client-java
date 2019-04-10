@@ -87,8 +87,6 @@ steps:
     ARTIFACTORY_DEPLOYER_RELEASE:
       from_secret: ARTIFACTORY_DEPLOYER_RELEASE
   when:
-    branch:
-    - master
     event:
     - tag
   commands:
