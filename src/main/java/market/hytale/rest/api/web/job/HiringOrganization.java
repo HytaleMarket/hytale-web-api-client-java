@@ -12,26 +12,46 @@
  * the License.
  */
 
-package market.hytale.game.api.web.blog;
+package market.hytale.rest.api.web.job;
 
+import com.squareup.moshi.Json;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * Represents a detailed blog post extending {@link BlogPostDetailed} with navigation.
- * This is usually a directly selected blog post.
+ * Represents a hiring organization (normally Hypixel Studios).
  * @since 1.0.0
  * @version 2019.04.01-RELEASE
  */
 @SuperBuilder
 @Getter
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class BlogPostDetailedNavigable extends BlogPostDetailed {
+@ToString
+@EqualsAndHashCode
+public class HiringOrganization {
 
-    private BlogPostDetailed next;
-    private BlogPostDetailed previous;
+    @Json(name = "@type")
+    private String type;
+    private String name;
+    private Department department;
+    private String logo;
+
+    /**
+     * Represents a department of a {@link HiringOrganization}.
+     * @since 1.0.0
+     * @version 2019.04.01-RELEASE
+     */
+    @SuperBuilder
+    @Getter
+    @ToString
+    @EqualsAndHashCode
+    public static class Department {
+
+        @Json(name = "@type")
+        private String type;
+        private String name;
+
+    }
 
 }

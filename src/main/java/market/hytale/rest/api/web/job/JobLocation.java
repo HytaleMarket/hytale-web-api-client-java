@@ -12,25 +12,43 @@
  * the License.
  */
 
-package market.hytale.game.api.web.blog;
+package market.hytale.rest.api.web.job;
 
+import com.squareup.moshi.Json;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * Represents a blog post preview extending {@link AbstractBlogPost} with a content excerpt.
- * This is usually a blog post from a list (e. g. archive or published ones).
+ * Represents a job location.
  * @since 1.0.0
  * @version 2019.04.01-RELEASE
  */
 @SuperBuilder
 @Getter
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class BlogPostPreview extends AbstractBlogPost {
+@ToString
+@EqualsAndHashCode
+public class JobLocation {
 
-    private String bodyExcerpt;
+    @Json(name = "@type")
+    private String type;
+
+    /**
+     * Represents an address for a {@link JobLocation}.
+     * @since 1.0.0
+     * @version 2019.04.01-RELEASE
+     */
+    @SuperBuilder
+    @Getter
+    @ToString
+    @EqualsAndHashCode
+    public static class Address {
+
+        @Json(name = "@type")
+        private String type;
+        private String addressCountry;
+
+    }
 
 }

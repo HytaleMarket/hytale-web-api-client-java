@@ -26,12 +26,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-import market.hytale.game.api.web.HytaleWebApiManager;
-import market.hytale.game.api.web.HytaleWebApiService;
-import market.hytale.game.api.web.blog.AbstractBlogPost;
-import market.hytale.game.api.web.blog.BlogPost;
-import market.hytale.game.api.web.blog.BlogPostDetailedNavigable;
-import market.hytale.game.api.web.blog.BlogPostPreview;
+import market.hytale.rest.api.web.HytaleWebApiManager;
+import market.hytale.rest.api.web.HytaleWebApiService;
+import market.hytale.rest.api.web.blog.AbstractBlogPost;
+import market.hytale.rest.api.web.blog.BlogPost;
+import market.hytale.rest.api.web.blog.BlogPostDetailedNavigable;
+import market.hytale.rest.api.web.blog.BlogPostPreview;
 import retrofit2.Response;
 
 @TestInstance(Lifecycle.PER_CLASS)

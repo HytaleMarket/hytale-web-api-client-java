@@ -12,9 +12,10 @@
  * the License.
  */
 
-package market.hytale.game.api.web.job;
+package market.hytale.rest.api.web.blog;
 
 import java.util.Date;
+import java.util.List;
 
 import com.squareup.moshi.Json;
 
@@ -24,7 +25,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * Represents a listed job.
+ * Represents a cover image for a {@link AbstractBlogPost}.
  * @since 1.0.0
  * @version 2019.04.01-RELEASE
  */
@@ -32,36 +33,18 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @ToString
 @EqualsAndHashCode
-public class Job {
+public class CoverImage {
 
-    @Json(name = "@context")
-    private String context;
-    @Json(name = "@type")
-    private String type;
-    private Date datePosted;
-    private String description;
-    private HiringOrganization hiringOrganization;
-    private Identifier identifier;
-    private String title;
-    private String url;
-    private String employmentType;
-
-    /**
-     * Represents a job identifier.
-     * @since 1.0.0
-     * @version 2019.04.01-RELEASE
-     */
-    @SuperBuilder
-    @Getter
-    @ToString
-    @EqualsAndHashCode
-    public static class Identifier {
-
-        @Json(name = "@type")
-        private String type;
-        private String name;
-        private String value;
-
-    }
+    private List<String> variants;
+    @Json(name = "_id")
+    private String id;
+    private String s3Key;
+    private String mimeType;
+    private boolean attached;
+    private String contentType;
+    private String contentId;
+    private Date createdAt;
+    @Json(name = "__v")
+    private int version;
 
 }

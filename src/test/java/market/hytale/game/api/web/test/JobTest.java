@@ -26,9 +26,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-import market.hytale.game.api.web.HytaleWebApiManager;
-import market.hytale.game.api.web.HytaleWebApiService;
-import market.hytale.game.api.web.job.Job;
+import market.hytale.rest.api.web.HytaleWebApiManager;
+import market.hytale.rest.api.web.HytaleWebApiService;
+import market.hytale.rest.api.web.job.Job;
 import retrofit2.Response;
 
 @TestInstance(Lifecycle.PER_CLASS)

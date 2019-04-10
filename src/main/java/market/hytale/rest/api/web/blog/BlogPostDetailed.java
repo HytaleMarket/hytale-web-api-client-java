@@ -12,7 +12,7 @@
  * the License.
  */
 
-package market.hytale.game.api.web.blog;
+package market.hytale.rest.api.web.blog;
 
 import java.util.List;
 

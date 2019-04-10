@@ -88,10 +88,26 @@
                                 <goal>shade</goal>
                             </goals>
                             <configuration>
-                                <artifactSet>
-                                </artifactSet>
                                 <shadedArtifactAttached>true</shadedArtifactAttached>
                                 <finalName>${project.artifactId}-${project.version}</finalName>
+                                <relocations>
+                                    <relocation>
+                                        <pattern>retrofit2.</pattern>
+                                        <shadedPattern>market.hytale.shaded.retrofit2.</shadedPattern>
+                                    </relocation>
+                                    <relocation>
+                                        <pattern>okio.</pattern>
+                                        <shadedPattern>market.hytale.shaded.okio.</shadedPattern>
+                                    </relocation>
+                                    <relocation>
+                                        <pattern>okhttp3.</pattern>
+                                        <shadedPattern>market.hytale.shaded.okhttp3.</shadedPattern>
+                                    </relocation>
+                                    <relocation>
+                                        <pattern>com.squareup.</pattern>
+                                        <shadedPattern>market.hytale.shaded.com.squareup.</shadedPattern>
+                                    </relocation>
+                                </relocations>
                             </configuration>
                         </execution>
                     </executions>
@@ -141,8 +157,8 @@
 
     <repositories>
         <repository>
-            <id>maven-central</id>
-            <url>http://repo.maven.apache.org/maven2</url>
+            <id>repository.hytale.market</id>
+            <url>https://repository.hytale.market/public-releases/</url>
         </repository>
     </repositories>
 

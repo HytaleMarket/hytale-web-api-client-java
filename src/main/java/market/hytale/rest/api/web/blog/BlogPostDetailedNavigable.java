@@ -12,12 +12,7 @@
  * the License.
  */
 
-package market.hytale.game.api.web.blog;
-
-import java.util.Date;
-import java.util.List;
-
-import com.squareup.moshi.Json;
+package market.hytale.rest.api.web.blog;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -25,25 +20,18 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * Represents the base model of every blog post.
+ * Represents a detailed blog post extending {@link BlogPostDetailed} with navigation.
+ * This is usually a directly selected blog post.
  * @since 1.0.0
  * @version 2019.04.01-RELEASE
  */
 @SuperBuilder
 @Getter
-@ToString
-@EqualsAndHashCode
-public abstract class AbstractBlogPost {
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class BlogPostDetailedNavigable extends BlogPostDetailed {
 
-    private boolean featured;
-    private List<String> tags;
-    @Json(name = "_id")
-    private String id;
-    private String author;
-    private String title;
-    private Date publishedAt;
-    private CoverImage coverImage;
-    private Date createdAt;
-    private String slug;
+    private BlogPostDetailed next;
+    private BlogPostDetailed previous;
 
 }

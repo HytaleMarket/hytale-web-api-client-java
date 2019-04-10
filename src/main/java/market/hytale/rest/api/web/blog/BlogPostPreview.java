@@ -12,7 +12,25 @@
  * the License.
  */
 
+package market.hytale.rest.api.web.blog;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
 /**
- * Provides all job entities that may be returned from the Hytale Web API.
+ * Represents a blog post preview extending {@link AbstractBlogPost} with a content excerpt.
+ * This is usually a blog post from a list (e. g. archive or published ones).
+ * @since 1.0.0
+ * @version 2019.04.01-RELEASE
  */
-package market.hytale.game.api.web.job;
+@SuperBuilder
+@Getter
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class BlogPostPreview extends AbstractBlogPost {
+
+    private String bodyExcerpt;
+
+}

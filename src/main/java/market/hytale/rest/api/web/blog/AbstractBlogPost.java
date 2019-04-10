@@ -12,7 +12,7 @@
  * the License.
  */
 
-package market.hytale.game.api.web.blog;
+package market.hytale.rest.api.web.blog;
 
 import java.util.Date;
 import java.util.List;
@@ -25,7 +25,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * Represents a cover image for a {@link AbstractBlogPost}.
+ * Represents the base model of every blog post.
  * @since 1.0.0
  * @version 2019.04.01-RELEASE
  */
@@ -33,18 +33,17 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @ToString
 @EqualsAndHashCode
-public class CoverImage {
+public abstract class AbstractBlogPost {
 
-    private List<String> variants;
+    private boolean featured;
+    private List<String> tags;
     @Json(name = "_id")
     private String id;
-    private String s3Key;
-    private String mimeType;
-    private boolean attached;
-    private String contentType;
-    private String contentId;
+    private String author;
+    private String title;
+    private Date publishedAt;
+    private CoverImage coverImage;
     private Date createdAt;
-    @Json(name = "__v")
-    private int version;
+    private String slug;
 
 }

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package market.hytale.game.api.web;
+package market.hytale.rest.api.web;
 
 import java.util.Date;
 

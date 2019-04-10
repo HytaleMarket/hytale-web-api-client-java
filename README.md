@@ -1,6 +1,6 @@
 # Hytale Web API Client (Java)
 ### Java-based client implementation of the Hytale Web API
-[![Version](https://img.shields.io/github/release/HytaleMarket/hytale-web-api-client-java.svg?style=flat-square)](https://github.com/HytaleMarket/hytale-web-api-client-java/releases/latest) [![Total Downloads](https://img.shields.io/github/downloads/HytaleMarket/hytale-web-api-client-java/total.svg?style=flat-square)](https://github.com/HytaleMarket/hytale-web-api-client-java/releases) [![JitPack](https://jitpack.io/v/market.hytale/hytale-web-api-client-java.svg?style=flat-square)](https://jitpack.io/#market.hytale/hytale-web-api-client-java) [![License](https://img.shields.io/github/license/HytaleMarket/hytale-web-api-client-java.svg?style=flat-square)](https://github.com/HytaleMarket/hytale-web-api-client-java/LICENSE.txt) [![Discord](https://img.shields.io/discord/531173479282901002.svg?style=flat-square)](https://hytale.market/discord)
+[![Build Status](https://external.build.hytale.market/api/badges/HytaleMarket/hytale-web-api-client-java/status.svg)](https://external.build.hytale.market/HytaleMarket/hytale-web-api-client-java) [![Version](https://img.shields.io/github/release/HytaleMarket/hytale-web-api-client-java.svg?style=flat-square)](https://github.com/HytaleMarket/hytale-web-api-client-java/releases/latest) [![Total Downloads](https://img.shields.io/github/downloads/HytaleMarket/hytale-web-api-client-java/total.svg?style=flat-square)](https://github.com/HytaleMarket/hytale-web-api-client-java/releases) [![License](https://img.shields.io/github/license/HytaleMarket/hytale-web-api-client-java.svg?style=flat-square)](https://github.com/HytaleMarket/hytale-web-api-client-java/LICENSE.txt) [![Discord](https://img.shields.io/discord/531173479282901002.svg?style=flat-square)](https://hytale.market/discord)
 
 ---
 
@@ -20,8 +20,8 @@ Add the repository:
 ```xml
 <repositories>
     <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
+        <id>repository.hytale.market</id>
+        <url>https://repository.hytale.market/public-releases/</url>
     </repository>
 </repositories>
 ```
@@ -41,7 +41,7 @@ Add the repository:
 ```gradle
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://repository.hytale.market/public-releases/' }
     }
 }
 ```
@@ -55,7 +55,7 @@ dependencies {
 #### [sbt](https://www.scala-sbt.org/) (`build.sbt`)
 Add the repository:
 ```scala
-resolvers += "jitpack" at "https://jitpack.io"
+resolvers += "repository.hytale.market" at "https://repository.hytale.market/public-releases/"
 ```
 Add the dependency:
 ```scala
@@ -65,7 +65,7 @@ libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "20
 ---
 
 ### Usage
-Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/game/api/web/HytaleWebApiManager.java#L41) method:
+Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) method:
 ```java
 HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 ```

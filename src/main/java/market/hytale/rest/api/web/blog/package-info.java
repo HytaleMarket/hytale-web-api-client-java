@@ -13,6 +13,6 @@
  */
 
 /**
- * Provides the main class and service interface.
+ * Provides all blog entities that may be returned from the Hytale Web API.
  */
-package market.hytale.game.api.web;
+package market.hytale.rest.api.web.blog;

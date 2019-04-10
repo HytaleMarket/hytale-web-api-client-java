@@ -12,14 +12,14 @@
  * the License.
  */
 
-package market.hytale.game.api.web;
+package market.hytale.rest.api.web;
 
 import java.util.List;
 
-import market.hytale.game.api.web.blog.BlogPost;
-import market.hytale.game.api.web.blog.BlogPostDetailedNavigable;
-import market.hytale.game.api.web.blog.BlogPostPreview;
-import market.hytale.game.api.web.job.Job;
+import market.hytale.rest.api.web.blog.BlogPost;
+import market.hytale.rest.api.web.blog.BlogPostDetailedNavigable;
+import market.hytale.rest.api.web.blog.BlogPostPreview;
+import market.hytale.rest.api.web.job.Job;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
