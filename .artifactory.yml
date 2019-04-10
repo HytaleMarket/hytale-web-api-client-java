@@ -1,0 +1,10 @@
+version: 1
+type: maven
+resolver:
+  snapshotRepo: ARTIFACTORY_RESOLVER_SNAPSHOT
+  releaseRepo: ARTIFACTORY_RESOLVER_RELEASE
+  serverID: Default-Server
+deployer:
+  snapshotRepo: ARTIFACTORY_DEPLOYER_SNAPSHOT
+  releaseRepo: ARTIFACTORY_DEPLOYER_RELEASE
+serverID: Default-Server
