@@ -6,7 +6,7 @@
 
     <groupId>market.hytale.rest</groupId>
     <artifactId>hytale-web-api-client-java</artifactId>
-    <version>${project.version}</version>
+    <version>${project.releaseVersion}</version>
     <packaging>jar</packaging>
 
     <name>Hytale Web API Client (Java)</name>
@@ -26,7 +26,7 @@
     </organization>
 
     <properties>
-        <project.version>2019.04.01-RELEASE</project.version>
+        <project.releaseVersion>2019.04.01-RELEASE</project.releaseVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
