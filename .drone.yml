@@ -11,9 +11,9 @@ steps:
   - export PROJECT_YEAR=$(date +'%Y')
   - export PROJECT_MONTH=$(date +'%m')
   - export PROJECT_COMMIT_ID=$(echo ${DRONE_COMMIT} | cut -c1-7)
-  - export PROJECT_VERSION=$(echo ${PROJECT_YEAR}.${PROJECT_MONTH}.0+${DRONE_BUILD_NUMBER}.${DRONE_SOURCE_BRANCH}.${PROJECT_COMMIT_ID}-PR)
+  - export PROJECT_VERSION=$${PROJECT_YEAR}.$${PROJECT_MONTH}.0+${DRONE_BUILD_NUMBER}.${DRONE_SOURCE_BRANCH}.${PROJECT_COMMIT_ID}-PR
   - export M2_HOME=/usr/share/maven
-  - sed -z -i 's,<version>.*<\/version>,'"<version>${PROJECT_VERSION}</version>"',M' pom.xml
+  - sed -z -i 's,<version>.*<\/version>,'"<version>$${PROJECT_VERSION}</version>"',M' pom.xml
   - echo "Building project with Maven..."
   - mvn checkstyle:check
   - mvn clean
@@ -48,25 +48,25 @@ steps:
   - curl -fL https://getcli.jfrog.io | sh
   - echo "JFrog CLI has been downloaded!"
   - echo "Configuring Artifactory settings..."
-  - ./jfrog rt config --url=${ARTIFACTORY_URL} --user=${ARTIFACTORY_USER} --password=${ARTIFACTORY_PASSWORD}
+  - ./jfrog rt config --url=$${ARTIFACTORY_URL} --user=$${ARTIFACTORY_USER} --password=$${ARTIFACTORY_PASSWORD}
   - ./jfrog rt c show
   - export PROJECT_YEAR=$(date +'%Y')
   - export PROJECT_MONTH=$(date +'%m')
   - export PROJECT_COMMIT_ID=$(echo ${DRONE_COMMIT} | cut -c1-7)
-  - export PROJECT_VERSION=$(echo ${PROJECT_YEAR}.${PROJECT_MONTH}.0+${DRONE_BUILD_NUMBER}.${DRONE_SOURCE_BRANCH}.${PROJECT_COMMIT_ID}-SNAPSHOT)
+  - export PROJECT_VERSION=$${PROJECT_YEAR}.$${PROJECT_MONTH}.0+${DRONE_BUILD_NUMBER}.${DRONE_SOURCE_BRANCH}.$${PROJECT_COMMIT_ID}-SNAPSHOT
   - export M2_HOME=/usr/share/maven
-  - sed -z -i 's,<version>.*<\/version>,'"<version>${PROJECT_VERSION}</version>"',M' pom.xml
-  - sed -i 's,ARTIFACTORY_RESOLVER_SNAPSHOT,'"${ARTIFACTORY_RESOLVER_SNAPSHOT}"',g' .artifactory.yml
-  - sed -i 's,ARTIFACTORY_RESOLVER_RELEASE,'"${ARTIFACTORY_RESOLVER_RELEASE}"',g' .artifactory.yml
-  - sed -i 's,ARTIFACTORY_DEPLOYER_SNAPSHOT,'"${ARTIFACTORY_DEPLOYER_SNAPSHOT}"',g' .artifactory.yml
-  - sed -i 's,ARTIFACTORY_DEPLOYER_RELEASE,'"${ARTIFACTORY_DEPLOYER_RELEASE}"',g' .artifactory.yml
+  - sed -z -i 's,<version>.*<\/version>,'"<version>$${PROJECT_VERSION}</version>"',M' pom.xml
+  - sed -i 's,ARTIFACTORY_RESOLVER_SNAPSHOT,'"$${ARTIFACTORY_RESOLVER_SNAPSHOT}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_RESOLVER_RELEASE,'"$${ARTIFACTORY_RESOLVER_RELEASE}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_DEPLOYER_SNAPSHOT,'"$${ARTIFACTORY_DEPLOYER_SNAPSHOT}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_DEPLOYER_RELEASE,'"$${ARTIFACTORY_DEPLOYER_RELEASE}"',g' .artifactory.yml
   - echo "Artifactory settings have been configured!"
   - echo "Building project with Maven..."
-  - ./jfrog rt mvn "checkstyle:check clean install" .artifactory.yml --build-name=${DRONE_REPO} --build-number=${DRONE_BUILD_NUMBER}
+  - ./jfrog rt mvn "checkstyle:check clean install" .artifactory.yml --build-name=$${DRONE_REPO} --build-number=$${DRONE_BUILD_NUMBER}
   - echo "Project has been built!"
   - echo "Deploying project to Artifactory..."
-  - ./jfrog rt bce hytale-web-api-client-java ${DRONE_BUILD_NUMBER}
-  - ./jfrog rt bp hytale-web-api-client-java ${DRONE_BUILD_NUMBER}
+  - ./jfrog rt bce hytale-web-api-client-java $${DRONE_BUILD_NUMBER}
+  - ./jfrog rt bp hytale-web-api-client-java $${DRONE_BUILD_NUMBER}
   - echo "Project has been deployed!"
 - name: buildAndPublishRelease
   image: maven
@@ -94,21 +94,21 @@ steps:
   - curl -fL https://getcli.jfrog.io | sh
   - echo "JFrog CLI has been downloaded!"
   - echo "Configuring Artifactory settings..."
-  - ./jfrog rt config --url=${ARTIFACTORY_URL} --user=${ARTIFACTORY_USER} --password=${ARTIFACTORY_PASSWORD}
+  - ./jfrog rt config --url=$${ARTIFACTORY_URL} --user=$${ARTIFACTORY_USER} --password=$${ARTIFACTORY_PASSWORD}
   - ./jfrog rt c show
   - export PROJECT_YEAR=$(date +'%Y')
   - export PROJECT_MONTH=$(date +'%m')
   - export PROJECT_COMMIT_ID=$(echo ${DRONE_COMMIT} | cut -c1-7)
   - export M2_HOME=/usr/share/maven
-  - sed -i 's,ARTIFACTORY_RESOLVER_SNAPSHOT,'"${ARTIFACTORY_RESOLVER_SNAPSHOT}"',g' .artifactory.yml
-  - sed -i 's,ARTIFACTORY_RESOLVER_RELEASE,'"${ARTIFACTORY_RESOLVER_RELEASE}"',g' .artifactory.yml
-  - sed -i 's,ARTIFACTORY_DEPLOYER_SNAPSHOT,'"${ARTIFACTORY_DEPLOYER_SNAPSHOT}"',g' .artifactory.yml
-  - sed -i 's,ARTIFACTORY_DEPLOYER_RELEASE,'"${ARTIFACTORY_DEPLOYER_RELEASE}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_RESOLVER_SNAPSHOT,'"$${ARTIFACTORY_RESOLVER_SNAPSHOT}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_RESOLVER_RELEASE,'"$${ARTIFACTORY_RESOLVER_RELEASE}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_DEPLOYER_SNAPSHOT,'"$${ARTIFACTORY_DEPLOYER_SNAPSHOT}"',g' .artifactory.yml
+  - sed -i 's,ARTIFACTORY_DEPLOYER_RELEASE,'"$${ARTIFACTORY_DEPLOYER_RELEASE}"',g' .artifactory.yml
   - echo "Artifactory settings have been configured!"
   - echo "Building project with Maven..."
-  - ./jfrog rt mvn "checkstyle:check clean install" .artifactory.yml --build-name=${DRONE_REPO} --build-number=${DRONE_BUILD_NUMBER}
+  - ./jfrog rt mvn "checkstyle:check clean install" .artifactory.yml --build-name=$${DRONE_REPO} --build-number=$${DRONE_BUILD_NUMBER}
   - echo "Project has been built!"
   - echo "Deploying project to Artifactory..."
-  - ./jfrog rt bce hytale-web-api-client-java ${DRONE_BUILD_NUMBER}
-  - ./jfrog rt bp hytale-web-api-client-java ${DRONE_BUILD_NUMBER}
+  - ./jfrog rt bce hytale-web-api-client-java $${DRONE_BUILD_NUMBER}
+  - ./jfrog rt bp hytale-web-api-client-java $${DRONE_BUILD_NUMBER}
   - echo "Project has been deployed!"
