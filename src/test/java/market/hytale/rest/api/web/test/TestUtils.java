@@ -44,7 +44,7 @@ public class TestUtils {
             try {
                 assertNotNull(field.get(instance));
             } catch (IllegalArgumentException | IllegalAccessException e) {
-                fail(e);
+                fail("Field is null: " + field.getName(), e);
             }
         });
     }
