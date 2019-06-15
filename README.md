@@ -109,6 +109,7 @@ Don't worry, we already take care of our dependencies so that you definitely don
 - [Retrofit](https://square.github.io/retrofit/)
 - [Moshi](https://github.com/square/moshi)
 - [JUnit](https://junit.org/junit5/)
+- [Checkstyle](http://checkstyle.sourceforge.net/)
 
 ---
 
