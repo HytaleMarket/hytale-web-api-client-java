@@ -35,8 +35,8 @@ public final class HytaleWebApiManager {
     public static final String API_BASE_URL = "https://hytale.com/api/";
 
     /**
-     * Creates an instance of {@link HytaleWebApiManager}.
-     * @return The created instance of {@link HytaleWebApiManager}
+     * Creates an instance of {@link HytaleWebApiService}.
+     * @return The created instance of {@link HytaleWebApiService}
      */
     public static HytaleWebApiService createApiProvider() {
         OkHttpClient httpClient = new OkHttpClient.Builder().build();
@@ -45,9 +45,9 @@ public final class HytaleWebApiManager {
     }
 
     /**
-     * Creates an instance of {@link HytaleWebApiManager} with a custom {@link OkHttpClient}.
+     * Creates an instance of {@link HytaleWebApiService} with a custom {@link OkHttpClient}.
      * @param  httpClient An instance of {@link OkHttpClient}
-     * @return The created instance of {@link HytaleWebApiManager}
+     * @return The created instance of {@link HytaleWebApiService}
      */
     public static HytaleWebApiService createApiProvider(final OkHttpClient httpClient) {
         Moshi moshi =
