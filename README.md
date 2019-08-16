@@ -6,12 +6,12 @@
 [![Discord](https://img.shields.io/discord/531173479282901002.svg?style=flat-square)](https://hytale.market/discord)
 
 ## Table of Contents
-* [Getting started](#getting-started)
-   * [With build or dependency management tool](#with-build-or-dependency-management-tool)
+* [Including the client in your project](#including-the-client-in-your-project)
+   * [Using build or dependency management tool](#using-build-or-dependency-management-tool)
    * [Without build or dependency management tool](#without-build-or-dependency-management-tool)
    
-### Getting started
-#### With build or dependency management tool
+### Including the client in your project
+#### Using build or dependency management tool
 <details>
   <summary>Maven</summary>
   
