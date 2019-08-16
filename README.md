@@ -98,7 +98,7 @@ In order to get an instance of [`HytaleWebApiService`](https://github.com/Hytale
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();
 ```
 
-If you want to use your custom `OkHttpClient` instance, provide it as a parameter for the [`#createApiProvider(OkHttpClient)`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L52) static factory method.
+If you would like to use your custom `OkHttpClient` instance, pass it as parameter to the [`#createApiProvider(OkHttpClient)`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L52) static factory method.
 ```java
 final OkHttpClient myOkHttpClient = /* ... */ ;
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider(myOkHttpClient);
