@@ -7,7 +7,7 @@
 
 ## Table of Contents
 * [Including the client in your project](#including-the-client-in-your-project)
-   * [Using build or dependency management tool](#using-build-or-dependency-management-tool)
+   * [Using a build or dependency management tool](#using-a-build-or-dependency-management-tool)
    * [Without build or dependency management tool](#without-build-or-dependency-management-tool)
 * [Add to local Maven repository](#add-to-local-maven-repository)
 * [Quick guide on how to use](#quick-guide-on-how-to-use)
@@ -16,7 +16,7 @@
    * [Executing a asynchronous request](#executing-a-asynchronous-request)
    
 ## Including the client in your project
-### Using build or dependency management tool
+### Using a build or dependency management tool
 <details>
   <summary>Maven</summary>
   
