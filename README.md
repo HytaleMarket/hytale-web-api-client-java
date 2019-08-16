@@ -7,30 +7,31 @@
 
 ## Table of Contents
 * [Including the client in your project](#including-the-client-in-your-project)
-   * [No build or dependency management tool](#no-build-and-dependency-management-tool)
-   * [As Maven dependency](#as-maven-dependency)
-   * [As Gradle dependency](#as-gradle-dependency)
-   * [As SBT dependency](#as-sbt-dependency)
-* [Add to local Maven repository](#add-to-local-maven-repository)
+   * [No build or dependency management tool](#no-build-or-dependency-management-tool)
+   * [Using build or dependency management tool](#using-build-or-dependency-management-tool)
 * [Quick guide on how to use](#quick-guide-on-how-to-use)
    * [Creating an instance of `HytaleWebApiService`](#creating-an-instance-of-hytalewebapiservice)
    * [Executing a synchronous request](#executing-a-synchronous-request)
    * [Executing a asynchronous request](#executing-a-asynchronous-request)
 
 ## Including the client in your project
-#### No build and dependency management tool
+#### No build or dependency management tool
 You can [download the latest version from the releases page](https://github.com/HytaleMarket/hytale-web-api-client-java/releases/latest) and add the `.jar` file to your project libraries. We do recommend using a build and dependency management tool though.
 
-#### As Maven dependency
+#### Using build or dependency management tool
+<details>
+  <summary>As Maven dependency</summary>
+
 ```xml
+<!-- Add required repository -->
 <repositories>
     <repository>
         <id>repository.hytale.market</id>
         <url>https://repository.hytale.market/public-releases/</url>
     </repository>
 </repositories>
-```
-```xml
+
+<!-- Add as dependency -->
 <dependencies>
     <dependency>
         <groupId>market.hytale.rest</groupId>
@@ -38,47 +39,36 @@ You can [download the latest version from the releases page](https://github.com/
         <version>2019.04.01-RELEASE</version>
     </dependency>
 </dependencies>
-
 ```
+</details>
+<details>
+  <summary>As Gradle dependency</summary>
 
-#### As Gradle dependency
 ```gradle
+// Add required repository
 allprojects {
     repositories {
         maven { url 'https://repository.hytale.market/public-releases/' }
     }
 }
-```
-```gradle
+
+// Add as dependency
 dependencies {
     implementation 'market.hytale.rest:hytale-web-api-client-java:2019.04.01-RELEASE'
 }
 ```
+</details>
+<details>
+  <summary>As SBT dependency</summary>
 
-#### As SBT dependency
 ```scala
+// Add required repository
 resolvers += "repository.hytale.market" at "https://repository.hytale.market/public-releases/"
-```
-```scala
-libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "2019.04.01-RELEASE" 
-```
 
-## Add to local Maven repository
-#### Bash & Windows CMD
-```bash
-# HTTPS
-git clone https://github.com/HytaleMarket/hytale-web-api-client-java && cd hytale-web-api-client-java && mvn install
-# SSH
-git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git && cd hytale-web-api-client-java && mvn install
+// Add as dependency
+libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "2019.04.01-RELEASE"
 ```
-
-#### PowerShell
-```bash
-# HTTPS
-git clone https://github.com/HytaleMarket/hytale-web-api-client-java; cd hytale-web-api-client-java; mvn install
-# SSH
-git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git; cd hytale-web-api-client-java; mvn install
-```
+</details>
 
 ## Quick guide on how to use
 #### Creating an instance of `HytaleWebApiService`
