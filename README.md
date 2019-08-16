@@ -10,6 +10,10 @@
    * [Using build or dependency management tool](#using-build-or-dependency-management-tool)
    * [Without build or dependency management tool](#without-build-or-dependency-management-tool)
 * [Add to local Maven repository](#add-to-local-maven-repository)
+* [Quick guide on how to use](#quick-guide-on-how-to-use)
+   * [Creating an instance of `HytaleWebApiService`](#creating-an-instance-of-hytalewebapiservice)
+   * [Executing a synchronous request](#executing-a-synchronous-request)
+   * [Executing a asynchronous request](#executing-a-asynchronous-request)
    
 ## Including the client in your project
 ### Using build or dependency management tool
@@ -66,7 +70,7 @@ You can [download the latest version from the releases page](https://github.com/
 
 ## Add to local Maven repository
 <details>
-  <summary>Bash</summary>
+  <summary>Bash & Windows CMD</summary>
   
 ```bash
 # HTTPS
@@ -85,13 +89,44 @@ git clone https://github.com/HytaleMarket/hytale-web-api-client-java; cd hytale-
 git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git; cd hytale-web-api-client-java; mvn install
 ```
 </details>
-<details>
-  <summary>Windows Cmd</summary>
-  
-```bash
-# HTTPS
-git clone https://github.com/HytaleMarket/hytale-web-api-client-java && cd hytale-web-api-client-java && mvn install
-# SSH
-git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git && cd hytale-web-api-client-java && mvn install
+
+## Quick guide on how to use
+### Creating an instance of `HytaleWebApiService`
+In order to get an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) you have to create one by calling the static factory method [`#createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) of [`HytaleWebApiManager`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java). This will get you a fresh instance of `HytaleWebApiService` you can work with.  
+```java
+final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();
 ```
-</details>
+
+If you want to use your custom `OkHttpClient` instance, provide it as a parameter for the [`#createApiProvider(OkHttpClient)`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L52) static factory method.
+```java
+final OkHttpClient myOkHttpClient = /* ... */ ;
+final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider(myOkHttpClient);
+```
+
+### Executing a synchronous request
+```java
+final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
+final List<BlogPostPreview> featuredPosts = apiService.getPublishedBlogPosts().execute().body();
+```
+
+### Executing a asynchronous request
+```java
+final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
+apiService.getPublishedBlogPosts().enqueue(new Callback<List<BlogPostPreview>>() {
+
+    @Override
+    public void onResponse(Call<List<BlogPostPreview>> call, Response<List<BlogPostPreview>> response) {
+        if (response.isSuccessful()) {
+            // Resource is available
+            final List<BlogPostPreview> featuredPosts = response.body();
+        } else {
+            // Error handling
+        }
+    }
+
+    @Override
+    public void onFailure(Call<List<BlogPostPreview>> call, Throwable t) {
+        // Error handling
+    }
+});
+```
