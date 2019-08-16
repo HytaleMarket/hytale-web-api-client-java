@@ -9,12 +9,12 @@
 * [Including the client in your project](#including-the-client-in-your-project)
    * [Using a build or dependency management tool](#using-a-build-or-dependency-management-tool)
    * [Without build or dependency management tool](#without-build-or-dependency-management-tool)
-* [Add to local Maven repository](#add-to-local-maven-repository)
 * [Quick guide on how to use](#quick-guide-on-how-to-use)
    * [Creating an instance of `HytaleWebApiService`](#creating-an-instance-of-hytalewebapiservice)
    * [Executing a synchronous request](#executing-a-synchronous-request)
    * [Executing a asynchronous request](#executing-a-asynchronous-request)
-   
+* [Add to local Maven repository](#add-to-local-maven-repository)
+
 ## Including the client in your project
 ### Using a build or dependency management tool
 <details>
@@ -67,23 +67,6 @@ libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "20
 
 ### Without build or dependency management tool
 You can [download the latest version from the releases page](https://github.com/HytaleMarket/hytale-web-api-client-java/releases/latest) and add the `.jar` file to your project libraries. We do recommend using a build and dependency management tool though.
-
-## Add to local Maven repository
-#### Bash & Windows CMD
-
-```bash
-# HTTPS
-git clone https://github.com/HytaleMarket/hytale-web-api-client-java && cd hytale-web-api-client-java && mvn install
-# SSH
-git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git && cd hytale-web-api-client-java && mvn install
-```
-#### PowerShell
-```bash
-# HTTPS
-git clone https://github.com/HytaleMarket/hytale-web-api-client-java; cd hytale-web-api-client-java; mvn install
-# SSH
-git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git; cd hytale-web-api-client-java; mvn install
-```
 
 ## Quick guide on how to use
 ### Creating an instance of `HytaleWebApiService`
