@@ -6,6 +6,7 @@
 [![Discord](https://img.shields.io/discord/531173479282901002.svg?style=flat-square)](https://hytale.market/discord)
 
 ## Table of Contents
+* [Features](#features)
 * [Including the client in your project](#including-the-client-in-your-project)
    * [No build or dependency management tool](#no-build-or-dependency-management-tool)
    * [Using build or dependency management tool](#using-build-or-dependency-management-tool)
@@ -15,6 +16,10 @@
    * [Executing a asynchronous request](#executing-a-asynchronous-request)
 * [Used dependencies and tools](#used-dependencies-and-tools)
 * [License](#license)
+
+## Features
+- **Blog Posts:** Retrieve all [blog posts](https://hytale.com/news) that are either published, featured, or archived. You can also retrieve a single blog post.
+- **Jobs:** Retrieve all jobs with detailed information [currently listed on the official website](https://hytale.com/jobs).
 
 ## Including the client in your project
 #### No build or dependency management tool
