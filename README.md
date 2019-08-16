@@ -13,6 +13,8 @@
    * [Creating an instance of `HytaleWebApiService`](#creating-an-instance-of-hytalewebapiservice)
    * [Executing a synchronous request](#executing-a-synchronous-request)
    * [Executing a asynchronous request](#executing-a-asynchronous-request)
+* [Used dependencies and tools](#used-dependencies-and-tools)
+* [License](#license)
 
 ## Including the client in your project
 #### No build or dependency management tool
@@ -109,3 +111,17 @@ apiService.getPublishedBlogPosts().enqueue(new Callback<List<BlogPostPreview>>()
     }
 });
 ```
+
+## Used dependencies and tools
+Don't worry, we already take care of our dependencies so that you definitely don't have to deal with them! However, we wanted to draw some attention to the libraries and tools we use for this project.
+- [Retrofit](https://square.github.io/retrofit/)
+- [Moshi](https://github.com/square/moshi)
+- [Project Lombok](https://projectlombok.org/)
+- [JUnit](https://junit.org/junit5/)
+- [Checkstyle](http://checkstyle.sourceforge.net/)
+
+## License
+This project is licensed under the Apache License, Version 2.0. See the [LICENSE.txt](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/LICENSE.txt) file for details.
+
+### Provided by Hytale Market
+This project is provided by Hytale Market - an upcoming online marketplace for Hytale creations, resources and services. To learn more, check out https://hytale.market.
