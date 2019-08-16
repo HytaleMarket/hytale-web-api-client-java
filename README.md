@@ -93,12 +93,12 @@ git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git; cd hytale-
 
 ### Quick guide on how to use
 #### Creating an instance of `HytaleWebApiService`
-Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) method:
+Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager#createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) method:
 ```java
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();
 ```
 
-If you would like to use your custom `OkHttpClient` instance, pass it as parameter to the [`#createApiProvider(OkHttpClient)`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L52) static factory method.
+If you would like to use your custom `OkHttpClient` instance, pass it as parameter to the [`HytaleWebApiManager#createApiProvider(OkHttpClient)`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L52) static factory method.
 ```java
 final OkHttpClient myOkHttpClient = /* ... */ ;
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider(myOkHttpClient);
