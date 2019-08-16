@@ -93,7 +93,7 @@ git clone git@github.com:HytaleMarket/hytale-web-api-client-java.git; cd hytale-
 
 ### Quick guide on how to use
 #### Creating an instance of `HytaleWebApiService`
-In order to get an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) you have to create one by calling the static factory method [`#createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) of [`HytaleWebApiManager`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java). This will get you a fresh instance of `HytaleWebApiService` you can work with.  
+Create an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) by calling the static [`HytaleWebApiManager.createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) method:
 ```java
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();
 ```
