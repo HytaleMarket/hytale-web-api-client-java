@@ -114,7 +114,6 @@ final List<BlogPostPreview> featuredPosts = apiService.getPublishedBlogPosts().e
 ```java
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 apiService.getPublishedBlogPosts().enqueue(new Callback<List<BlogPostPreview>>() {
-
     @Override
     public void onResponse(Call<List<BlogPostPreview>> call, Response<List<BlogPostPreview>> response) {
         if (response.isSuccessful()) {
