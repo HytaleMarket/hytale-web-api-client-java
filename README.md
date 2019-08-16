@@ -65,7 +65,6 @@ libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "20
 You can [download the latest version from the releases page](https://github.com/HytaleMarket/hytale-web-api-client-java/releases/latest) and add the `.jar` file to your project libraries. We do recommend using a build and dependency management tool though.
 
 ## Add to local Maven repository
-#### TL;DR
 <details>
   <summary>Bash</summary>
   
