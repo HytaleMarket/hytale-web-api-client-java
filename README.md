@@ -15,8 +15,10 @@
    * [Executing a asynchronous request](#executing-a-asynchronous-request)
 * [Add to local Maven repository](#add-to-local-maven-repository)
 
-## Including the client in your project
-### Using a build or dependency management tool
+---
+
+### Including the client in your project
+#### Using a build or dependency management tool
 <details>
   <summary>Maven</summary>
   
@@ -65,11 +67,13 @@ libraryDependencies += "market.hytale.rest" % "hytale-web-api-client-java" % "20
 ```
 </details>
 
-### Without build or dependency management tool
+#### Without build or dependency management tool
 You can [download the latest version from the releases page](https://github.com/HytaleMarket/hytale-web-api-client-java/releases/latest) and add the `.jar` file to your project libraries. We do recommend using a build and dependency management tool though.
 
-## Quick guide on how to use
-### Creating an instance of `HytaleWebApiService`
+---
+
+### Quick guide on how to use
+#### Creating an instance of `HytaleWebApiService`
 In order to get an instance of [`HytaleWebApiService`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiService.java) you have to create one by calling the static factory method [`#createApiProvider()`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java#L41) of [`HytaleWebApiManager`](https://github.com/HytaleMarket/hytale-web-api-client-java/blob/master/src/main/java/market/hytale/rest/api/web/HytaleWebApiManager.java). This will get you a fresh instance of `HytaleWebApiService` you can work with.  
 ```java
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();
@@ -81,13 +85,13 @@ final OkHttpClient myOkHttpClient = /* ... */ ;
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider(myOkHttpClient);
 ```
 
-### Executing a synchronous request
+#### Executing a synchronous request
 ```java
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 final List<BlogPostPreview> featuredPosts = apiService.getPublishedBlogPosts().execute().body();
 ```
 
-### Executing a asynchronous request
+#### Executing a asynchronous request
 ```java
 final HytaleWebApiService apiService = HytaleWebApiManager.createApiProvider();  
 apiService.getPublishedBlogPosts().enqueue(new Callback<List<BlogPostPreview>>() {
