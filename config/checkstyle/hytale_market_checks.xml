@@ -101,6 +101,12 @@
         <property name="headerFile" value="${checkstyle.header.file}"/>
         <property name="fileExtensions" value="java"/>
     </module>
+    
+    <!-- Checks for Size Violations.                    -->
+    <!-- See http://checkstyle.sourceforge.net/config_sizes.html -->
+    <module name="LineLength">
+        <property name="max" value="120"/>
+    </module>
     <!-- End of Hytale Market Coding Conventions           -->
 
     <module name="TreeWalker">
@@ -175,11 +181,6 @@
 
         <!-- Checks for Size Violations.                    -->
         <!-- See http://checkstyle.sourceforge.net/config_sizes.html -->
-        <module name="LineLength">
-            <!-- Start of Hytale Market Coding Conventions  -->
-            <property name="max" value="120"/>
-            <!-- End of Hytale Market Coding Conventions    -->
-        </module>
         <module name="MethodLength">
             <!-- Start of Hytale Market Coding Conventions  -->
             <property name="tokens" value="METHOD_DEF"/>

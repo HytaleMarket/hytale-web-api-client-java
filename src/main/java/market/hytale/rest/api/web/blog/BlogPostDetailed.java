@@ -17,7 +17,6 @@ package market.hytale.rest.api.web.blog;
 import java.util.List;
 
 import com.squareup.moshi.Json;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;

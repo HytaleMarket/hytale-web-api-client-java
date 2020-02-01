@@ -18,7 +18,6 @@ import java.util.Date;
 import java.util.List;
 
 import com.squareup.moshi.Json;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
