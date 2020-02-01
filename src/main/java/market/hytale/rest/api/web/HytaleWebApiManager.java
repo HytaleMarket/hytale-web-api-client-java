@@ -18,7 +18,6 @@ import java.util.Date;
 
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter;
-
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
