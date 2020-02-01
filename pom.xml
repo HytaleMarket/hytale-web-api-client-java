@@ -35,7 +35,7 @@
         <checkstyle.consoleOutput>true</checkstyle.consoleOutput>
         <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
         <checkstyle.includeTestSourceDirectory>true</checkstyle.includeTestSourceDirectory>
-        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
 
         <junit-jupiter.version>5.5.0-M1</junit-jupiter.version>
     </properties>
